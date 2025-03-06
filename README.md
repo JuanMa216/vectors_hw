@@ -91,3 +91,53 @@ The `insert` method has **O(n) worst-case complexity** due to element shifting.
 
 ### Conclusion  
 The `erase` method has an **O(n) worst-case complexity** due to element shifting. While it is efficient for removing elements at the beginning or end, it becomes costly when deleting elements from the middle, as all subsequent elements must be shifted.
+
+# Vectors: removeDuplicates Function
+## Overview
+The `duplicate.cc` file contains the implementation of the `removeDuplicates(vector)` function for dynamic vectors.
+## Implementation
+
+### removeDuplicates Function
+```cpp
+template <typename T>
+Vector<T> removeDuplicates(const Vector<T>& vector) {
+    Vector<T> noDuplicates;
+
+    if (vector.size() == 0)
+    {
+        return noDuplicates;
+    }
+    
+    for (unsigned int i = 0; i < vector.size(); i++) {
+        bool is_unique = true;
+        
+        for (unsigned int j = 0; j < noDuplicates.size(); j++) {
+            if (noDuplicates.at(j) == vector.at(i)) {
+                is_unique = false;
+                break;
+            }
+        }
+        
+        if (is_unique) {
+            noDuplicates.push_back(vector.at(i));
+        }
+    }
+
+    return noDuplicates;
+}
+```
+## Time Complexity Analysis: `removeDuplicates(vector)`
+
+- **Best Case (O(n))**: If the input vector already contains unique elements, the function simply iterates through it once, adding each element to the new vector without needing duplicate checks. This results in O(n) complexity.
+
+- **Worst Case (O(n²))**: If every element in the input vector is a duplicate (e.g., `{1, 1, 1, 1, 1}`), the function compares each new element with all elements in `noDuplicates`, leading to a nested loop where each iteration performs up to `O(n)` comparisons, resulting in an overall complexity of O(n²).
+
+- **Average Case (O(n²))**: Since each element needs to be compared against the growing `noDuplicates` vector, the function exhibits quadratic behavior in the average case.
+
+### Overall Complexity:
+- **Best case**: O(n)
+- **Worst case**: O(n²)
+- **Average case**: O(n²)
+
+### Conclusion  
+The `removeDuplicates` function has an **O(n²) worst-case complexity** due to the nested loops. While efficient for cases where the input has few duplicates, it becomes costly when processing large lists with many repeated elements. 
