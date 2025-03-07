@@ -250,11 +250,15 @@ class stack {
             cout << data.at(i) << " ";
         }
     cout << endl;
-    }
-    
+    }   
 };
 ```
+# Dynamic Array Resizing Analysis
+The `resize.cc` program was implemented to generate data for various growth policies and store the results in a `.dat` file. These collected data were then transferred to Google Colab, where graphs were generated to visualize the growth of `capacity_`.  
 
+You can find the graphs and analysis of `capacity_` growth at the following link:  
+
+[View the graphs and analysis here](https://colab.research.google.com/drive/1s-slrx3GuVnw2tHbPj4LS9ZfVcEBO9t9)
 
 
 
