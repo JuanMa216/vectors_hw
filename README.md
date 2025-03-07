@@ -184,4 +184,77 @@ Vector<T> mergeSortedVectors(Vector<T>& v1, Vector<T>& v2) {
     return result;
 }
 ```
+# **Stack Implementation**  
+The `stack.cc` file contains the implementation of the `stack` class, a data structure based on dynamically resizable vectors.  
+
+## **Overview**  
+The `stack` class provides a **Last In, First Out (LIFO)** data structure, implemented using a custom `Vector` class. The `Vector` class dynamically resizes its storage as elements are added, ensuring efficient memory management.  
+
+## **Features**  
+- **Dynamic resizing:** The stack grows as needed.  
+- **Basic operations:** Supports `push()`, `pop()`, `peek()`, `empty()`, and `size()`.  
+- **Exception handling:** Prevents access to empty stacks.
+
+## Implementation
+
+### Stack Class
+```cpp
+
+template <typename T>
+class stack {
+    private:
+    Vector<T> data;
+    int top_ = -1;
+
+    public:
+    stack() {}
+
+    void push(const T& elem) {
+        data.push_back(elem);
+        top_ = data.size() - 1;
+    }
+
+    void pop() {
+        if (data.size() == 0) throw std::underflow_error("Cannot pop from an empty stack");
+        data.pop_back();
+        top_--;
+    }
+
+    T& peek() {  
+        if (data.empty()) {
+            throw std::out_of_range("Error: Intento de hacer peek() en un stack vacío.");
+        }
+        return data.at(top_);  
+    }
+    
+    const T& peek() const {  
+        if (data.empty()) {
+            throw std::out_of_range("Error: Intento de hacer peek() en un stack vacío.");
+        }
+        return data.at(top_);  
+    }
+
+    bool empty() const {
+        return data.empty();
+    }
+
+    unsigned int size() const {
+        return data.size();
+    }
+
+    void print() {
+        if(data.empty()) return;
+
+        for (int i = top_; i >= 0; i--)
+        {
+            cout << data.at(i) << " ";
+        }
+    cout << endl;
+    }
+    
+};
+```
+
+
+
 
