@@ -141,3 +141,47 @@ Vector<T> removeDuplicates(const Vector<T>& vector) {
 
 ### Conclusion  
 The `removeDuplicates` function has an **O(n²) worst-case complexity** due to the nested loops. While efficient for cases where the input has few duplicates, it becomes costly when processing large lists with many repeated elements. 
+
+# mergeSortedVectors
+The `merge.cc` file contains the implementation of the `mergeSortedVectors(Vector<T>& v1, Vector<T>& v2)` function for dynamic vectors.
+
+## Implementation
+
+### mergeSortedVectors Function
+```cpp
+template<typename T>
+Vector<T> mergeSortedVectors(Vector<T>& v1, Vector<T>& v2) {
+    int len1 = v1.size();
+    int len2 = v2.size();
+
+    if (len1 == 0) return v2;
+    if (len2 == 0) return v1;
+    if (len1 == 0 && len2 == 0) return Vector<T>();
+
+    Vector<T> result;
+
+    int i = 0, j = 0;
+    while (i < len1 && j < len2) {
+        if (v1[i] < v2[j]) {
+            result.push_back(v1[i]);
+            i++;
+        } else {
+            result.push_back(v2[j]);
+            j++;
+        }
+    }
+
+    while (i < len1) {
+        result.push_back(v1[i]);
+        i++;
+    }
+
+    while (j < len2) {
+        result.push_back(v2[j]);
+        j++;
+    }
+
+    return result;
+}
+```
+
