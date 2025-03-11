@@ -126,7 +126,7 @@ void RandomVector(Vector<int>* v, int size) {
 }
 
 int main() {
-    Vector<int> n(101);
+    Vector<int> n(100);
     
     RandomVector(&n, 100);
     Vector<int> temp1 = n; // Copia 1.
