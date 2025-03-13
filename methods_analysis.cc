@@ -81,7 +81,7 @@ public:
         }
 
         for (unsigned int i = size_; i > 0; i--) {
-            swap(storage_[i], storage_[i - 1]);
+            storage_[i] = storage_[i - 1];
         }
         storage_[0] = elem;
         size_++;
@@ -127,119 +127,18 @@ void RandomVector(Vector<int>* v, int size) {
 
 int main() {
     Vector<int> n(100);
-    
     RandomVector(&n, 100);
-    Vector<int> temp1 = n; // Copia 1.
-    Vector<int> temp2 = n; // Copia 2.
-    Vector<int> temp3 = n; // Copia 3
-    Vector<int> temp4 = n; // Copia 4.
-    Vector<int> temp5 = n; // Copia 5.
-    Vector<int> temp6 = n; // Copia 6.
-    Vector<int> temp7 = n; // Copia 7.
-    Vector<int> temp8 = n; // Copia 8.
-    Vector<int> temp9 = n; // Copia 9.
-    Vector<int> temp10 = n; // Copia 10.
-    Vector<int> tempfin = n; // Copia final
-    //cout <<"Tamaño: " << n.size() << endl;
 
-    // Medir tiempo de inserción(Posicion 0);
-    unsigned int pos = 0; // Posición específica para medir el tiempo de inserción
-    auto start_insert = high_resolution_clock::now();
-    temp1.insert(pos, 42);
-    auto end_insert = high_resolution_clock::now();
-    auto duration_insert = duration_cast<nanoseconds>(end_insert - start_insert);
-    // Mostrar el tiempo en pantalla
-    cout << "Tiempo de inserción en la posición " << pos << ": " << duration_insert.count() << " ns" << endl;
-
-    // Medir tiempo de inserción(Posicion 10);
-    pos = 10; // Posición específica para medir el tiempo de inserción
-    start_insert = high_resolution_clock::now();
-    temp2.insert(pos, 42);
-    end_insert = high_resolution_clock::now();
-    duration_insert = duration_cast<nanoseconds>(end_insert - start_insert);
-    // Mostrar el tiempo en pantalla
-    cout << "Tiempo de inserción en la posición " << pos << ": " << duration_insert.count() << " ns" << endl;
-
-    // Medir tiempo de inserción(Posicion 20);
-    pos = 20; // Posición específica para medir el tiempo de inserción
-    start_insert = high_resolution_clock::now();
-    temp3.insert(pos, 42);
-    end_insert = high_resolution_clock::now();
-    duration_insert = duration_cast<nanoseconds>(end_insert - start_insert);
-    // Mostrar el tiempo en pantalla
-    cout << "Tiempo de inserción en la posición " << pos << ": " << duration_insert.count() << " ns" << endl;
-
-    // Medir tiempo de inserción(Posicion 30);
-    pos = 30; // Posición específica para medir el tiempo de inserción
-    start_insert = high_resolution_clock::now();
-    temp4.insert(pos, 42);
-    end_insert = high_resolution_clock::now();
-    duration_insert = duration_cast<nanoseconds>(end_insert - start_insert);
-    // Mostrar el tiempo en pantalla
-    cout << "Tiempo de inserción en la posición " << pos << ": " << duration_insert.count() << " ns" << endl;
-
-    // Medir tiempo de inserción(Posicion 40);
-    pos = 40; // Posición específica para medir el tiempo de inserción
-    start_insert = high_resolution_clock::now();
-    temp5.insert(pos, 42);
-    end_insert = high_resolution_clock::now();
-    duration_insert = duration_cast<nanoseconds>(end_insert - start_insert);
-    // Mostrar el tiempo en pantalla
-    cout << "Tiempo de inserción en la posición " << pos << ": " << duration_insert.count() << " ns" << endl;
-
-    // Medir tiempo de inserción(Posicion 50);
-    pos = 50; // Posición específica para medir el tiempo de inserción
-    start_insert = high_resolution_clock::now();
-    temp6.insert(pos, 42);
-    end_insert = high_resolution_clock::now();
-    duration_insert = duration_cast<nanoseconds>(end_insert - start_insert);
-    // Mostrar el tiempo en pantalla
-    cout << "Tiempo de inserción en la posición " << pos << ": " << duration_insert.count() << " ns" << endl;
-
-    // Medir tiempo de inserción(Posicion 60);
-    pos = 60; // Posición específica para medir el tiempo de inserción
-    start_insert = high_resolution_clock::now();
-    temp7.insert(pos, 42);
-    end_insert = high_resolution_clock::now();
-    duration_insert = duration_cast<nanoseconds>(end_insert - start_insert);
-    // Mostrar el tiempo en pantalla
-    cout << "Tiempo de inserción en la posición " << pos << ": " << duration_insert.count() << " ns" << endl;
-
-    // Medir tiempo de inserción(Posicion 70);
-    pos = 70; // Posición específica para medir el tiempo de inserción
-    start_insert = high_resolution_clock::now();
-    temp8.insert(pos, 42);
-    end_insert = high_resolution_clock::now();
-    duration_insert = duration_cast<nanoseconds>(end_insert - start_insert);
-    // Mostrar el tiempo en pantalla
-    cout << "Tiempo de inserción en la posición " << pos << ": " << duration_insert.count() << " ns" << endl;
-
-    // Medir tiempo de inserción(Posicion 80);
-    pos = 80; // Posición específica para medir el tiempo de inserción
-    start_insert = high_resolution_clock::now();
-    temp9.insert(pos, 42);
-    end_insert = high_resolution_clock::now();
-    duration_insert = duration_cast<nanoseconds>(end_insert - start_insert);
-    // Mostrar el tiempo en pantalla
-    cout << "Tiempo de inserción en la posición " << pos << ": " << duration_insert.count() << " ns" << endl;
-
-    // Medir tiempo de inserción(Posicion 90);
-    pos = 90; // Posición específica para medir el tiempo de inserción
-    start_insert = high_resolution_clock::now();
-    temp10.insert(pos, 42);
-    end_insert = high_resolution_clock::now();
-    duration_insert = duration_cast<nanoseconds>(end_insert - start_insert);
-    // Mostrar el tiempo en pantalla
-    cout << "Tiempo de inserción en la posición " << pos << ": " << duration_insert.count() << " ns" << endl;
-
-    // Medir tiempo de inserción(Posicion 90);
-    pos = 100; // Posición específica para medir el tiempo de inserción
-    start_insert = high_resolution_clock::now();
-    tempfin.insert(pos, 42);
-    end_insert = high_resolution_clock::now();
-    duration_insert = duration_cast<nanoseconds>(end_insert - start_insert);
-    // Mostrar el tiempo en pantalla
-    cout << "Tiempo de inserción en la posición " << pos << ": " << duration_insert.count() << " ns" << endl;
+    for (int pos = 0; pos <= 100; pos += 10) {
+        Vector<int> temp = n; // Se crea una copia en cada iteración
+    
+        auto start_insert = high_resolution_clock::now();
+        temp.insert(pos, 42);
+        auto end_insert = high_resolution_clock::now();
+    
+        auto duration_insert = duration_cast<nanoseconds>(end_insert - start_insert);
+        cout << "Tiempo de inserción en la posición " << pos << ": " << duration_insert.count() << " ns" << endl;
+    }
     
     return 0;
 }

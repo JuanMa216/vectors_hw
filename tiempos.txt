@@ -1,0 +1,11 @@
+Tiempo de inserción en la posición 0: 114602 ns
+Tiempo de inserción en la posición 10: 41580 ns
+Tiempo de inserción en la posición 20: 21260 ns
+Tiempo de inserción en la posición 30: 28129 ns
+Tiempo de inserción en la posición 40: 55121 ns
+Tiempo de inserción en la posición 50: 36207 ns
+Tiempo de inserción en la posición 60: 48071 ns
+Tiempo de inserción en la posición 70: 41857 ns
+Tiempo de inserción en la posición 80: 45286 ns
+Tiempo de inserción en la posición 90: 35560 ns
+Tiempo de inserción en la posición 100: 46665 ns
