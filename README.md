@@ -128,11 +128,11 @@ Vector<T> removeDuplicates(const Vector<T>& vector) {
 ```
 ## Time Complexity Analysis: `removeDuplicates(vector)`
 
-- **Best Case (O(n))**: If the input vector already contains unique elements, the function simply iterates through it once, adding each element to the new vector without needing duplicate checks. This results in O(n) complexity.
+- **Best Case (O(n))**: The best case occurs when all elements in the input vector are duplicates (e.g., `{1, 1, 1, 1}`). In this scenario, each element is checked once and skipped after the first occurrence, leading to a **single linear pass** through the input vector.
 
-- **Worst Case (O(n²))**: If every element in the input vector is a duplicate (e.g., `{1, 1, 1, 1, 1}`), the function compares each new element with all elements in `noDuplicates`, leading to a nested loop where each iteration performs up to `O(n)` comparisons, resulting in an overall complexity of O(n²).
+- **Worst Case (O(n²))**: The worst case occurs when all elements in the vector are unique (e.g., `{1, 2, 3, 4, 5}`). Each new element is compared against all elements already stored in `noDuplicates`, resulting in a **nested loop** where each iteration performs up to `O(n)` comparisons. This leads to an overall complexity of **O(n²)**.
 
-- **Average Case (O(n²))**: Since each element needs to be compared against the growing `noDuplicates` vector, the function exhibits quadratic behavior in the average case.
+- **Average Case (O(n²))**: On average, the function exhibits **quadratic behavior**, as each element is compared against a growing `noDuplicates` vector, making the number of comparisons dependent on the number of unique elements encountered.
 
 ### Overall Complexity:
 - **Best case**: O(n)
